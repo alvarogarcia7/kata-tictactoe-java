@@ -9,7 +9,7 @@ public class TicTacToeTest {
     TicTacToe board = new TicTacToe(new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } });
 
     @Test
-    public void sets_the_position() {
+    public void starts_with_player_x() {
         this.board.play(0, 0);
 
         assertThat(get(0, 0)).isEqualTo("X");
