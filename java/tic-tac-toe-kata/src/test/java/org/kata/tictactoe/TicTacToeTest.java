@@ -22,6 +22,21 @@ public class TicTacToeTest {
         assertThat(board[0][0]).isEqualTo("X");
     }
 
+    @Test
+    public void win_in_first_column() {
+        String[][] board = new String[3][3];
+
+        set("X", board, 0, 0);
+        set("X", board, 1, 0);
+        set("X", board, 2, 0);
+
+        assertThat(winning("X", board)).isEqualTo(true);
+    }
+
+    private boolean winning(String player, String[][] board) {
+        return false;
+    }
+
     private void set(String x, String[][] board, int i, int j) {
         board[i][j] = x;
     }
