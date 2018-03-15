@@ -35,6 +35,7 @@ public class TicTacToeTest {
         this.board.play(0, 0);
         dummyMove();
         this.board.play(1, 0);
+        dummyMove();
         this.board.play(2, 0);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -43,7 +44,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_second_column() {
         this.board.play(0, 1);
+        dummyMove();
         this.board.play(1, 1);
+        dummyMove();
         this.board.play(2, 1);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -52,7 +55,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_third_column() {
         this.board.play(0, 2);
+        dummyMove();
         this.board.play(1, 2);
+        dummyMove();
         this.board.play(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -61,7 +66,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_first_row() {
         this.board.play(0, 0);
+        dummyMove();
         this.board.play(0, 1);
+        dummyMove();
         this.board.play(0, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -70,7 +77,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_second_row() {
         this.board.play(1, 0);
+        dummyMove();
         this.board.play(1, 1);
+        dummyMove();
         this.board.play(1, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -79,7 +88,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_third_row() {
         this.board.play(2, 0);
+        dummyMove();
         this.board.play(2, 1);
+        dummyMove();
         this.board.play(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -88,7 +99,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_main_diagonal() {
         this.board.play(0, 0);
+        dummyMove();
         this.board.play(1, 1);
+        dummyMove();
         this.board.play(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -97,7 +110,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_other_diagonal() {
         this.board.play(2, 0);
+        dummyMove();
         this.board.play(1, 1);
+        dummyMove();
         this.board.play(0, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
