@@ -1,6 +1,5 @@
 package org.kata.tictactoe;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,7 +14,6 @@ public class TicTacToeTest {
         assertThat(get(0, 0)).isEqualTo("X");
     }
 
-    @Ignore
     @Test
     public void cannot_play_twice_as_the_same_player() {
         this.board.play(0, 0);
