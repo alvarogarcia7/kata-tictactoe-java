@@ -9,19 +9,25 @@ public class TicTacToeTest {
 
     @Test
     public void starts_with_player_x() {
-        this.board.play(0, 0);
+        playX(0, 0);
 
         assertThat(get(0, 0)).isEqualTo("X");
     }
 
     @Test
     public void cannot_play_twice_as_the_same_player() {
-        this.board.play(0, 0);
+        final int i = 0;
+        final int j = 0;
+        playX(i, j);
         this.board.play(0, 1);
 
         assertThat(get(0, 0)).isEqualTo("X");
         assertThat(get(0, 1)).isEqualTo("O");
 
+    }
+
+    private void playX(int i, int j) {
+        this.board.play(i, j);
     }
 
     private String get(int i, int j) {
@@ -30,102 +36,101 @@ public class TicTacToeTest {
 
     @Test
     public void win_in_first_column() {
-        this.board.play(0, 0);
-        dummyMove();
-        this.board.play(1, 0);
-        dummyMove();
-        this.board.play(2, 0);
+        playX(0, 0);
+        playO();
+        playX(1, 0);
+        playO();
+        playX(2, 0);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_second_column() {
-        this.board.play(0, 1);
-        dummyMove(0, 0);
-        this.board.play(1, 1);
-        dummyMove(0, 0);
-        this.board.play(2, 1);
+        playX(0, 1);
+        playO(0, 0);
+        playX(1, 1);
+        playO(0, 0);
+        playX(2, 1);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_third_column() {
-        this.board.play(0, 2);
-        dummyMove();
-        this.board.play(1, 2);
-        dummyMove();
-        this.board.play(2, 2);
+        playX(0, 2);
+        playO();
+        playX(1, 2);
+        playO();
+        playX(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_first_row() {
-        this.board.play(0, 0);
-        dummyMove(2, 2);
-        this.board.play(0, 1);
-        dummyMove(2, 2);
-        this.board.play(0, 2);
+        playX(0, 0);
+        playO(2, 2);
+        playX(0, 1);
+        playO(2, 2);
+        playX(0, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_second_row() {
-        this.board.play(1, 0);
-        dummyMove();
-        this.board.play(1, 1);
-        dummyMove();
-        this.board.play(1, 2);
+        playX(1, 0);
+        playO();
+        playX(1, 1);
+        playO();
+        playX(1, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_third_row() {
-        this.board.play(2, 0);
-        dummyMove();
-        this.board.play(2, 1);
-        dummyMove();
-        this.board.play(2, 2);
+        playX(2, 0);
+        playO();
+        playX(2, 1);
+        playO();
+        playX(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_main_diagonal() {
-        this.board.play(0, 0);
-        dummyMove();
-        this.board.play(1, 1);
-        dummyMove();
-        this.board.play(2, 2);
+        playX(0, 0);
+        playO();
+        playX(1, 1);
+        playO();
+        playX(2, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     @Test
     public void win_in_other_diagonal() {
-        this.board.play(2, 0);
-        dummyMove();
-        this.board.play(1, 1);
-        dummyMove();
-        this.board.play(0, 2);
+        playX(2, 0);
+        playO();
+        playX(1, 1);
+        playO();
+        playX(0, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
     }
 
     private boolean winning(String p, TicTacToe b) {
         return p.equals(b.winner());
-
     }
 
-    private void dummyMove() {
+    private void playO() {
         this.board.play(0, 1);
     }
 
-    private void dummyMove(int i, int j) {
+    private void playO(int i, int j) {
         this.board.play(i, j);
     }
 }
