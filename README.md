@@ -1,5 +1,9 @@
 # Tic Tac Toe Kata
 
+
+
+# Kata description - Tic Tac Toe Kata
+
 ## Rules
 
 * A game has nine fields in a 3x3 grid
