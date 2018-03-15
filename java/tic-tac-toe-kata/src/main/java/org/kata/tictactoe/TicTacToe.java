@@ -48,10 +48,6 @@ public class TicTacToe {
         return this.board[i][j];
     }
 
-    private void set(String x, String[][] board, int i, int j) {
-        new TicTacToe(board).play(i, j);
-    }
-
     public String get(int i, int j) {
         return this.board[i][j];
     }
