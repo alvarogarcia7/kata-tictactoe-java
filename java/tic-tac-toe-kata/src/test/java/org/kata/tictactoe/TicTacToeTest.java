@@ -33,6 +33,7 @@ public class TicTacToeTest {
     @Test
     public void win_in_first_column() {
         this.board.play(0, 0);
+        dummyMove();
         this.board.play(1, 0);
         this.board.play(2, 0);
 
@@ -107,4 +108,7 @@ public class TicTacToeTest {
 
     }
 
+    private void dummyMove() {
+        this.board.play(0, 1);
+    }
 }
