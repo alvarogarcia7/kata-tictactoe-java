@@ -55,13 +55,12 @@ public class TicTacToeTest {
         assertThat(winning("X", board)).isEqualTo(true);
     }
 
-    private boolean winning(String player, String[][] board) {
+    private boolean winning(String p, String[][] b) {
 
-        return (isEquals(player, board, 0, 0) && isEquals(player, board, 1, 0) && isEquals(player, board, 2, 0)) || (isEquals(player, board, 0, 1) && isEquals(player, board, 1, 1)
-                && isEquals(player, board, 2, 1)) || (isEquals(player, board, 0, 2) && isEquals(player, board, 1, 2) && isEquals(player, board, 2, 2));
+        return (eq(p, b, 0, 0) && eq(p, b, 1, 0) && eq(p, b, 2, 0)) || (eq(p, b, 0, 1) && eq(p, b, 1, 1) && eq(p, b, 2, 1)) || (eq(p, b, 0, 2) && eq(p, b, 1, 2) && eq(p, b, 2, 2));
     }
 
-    private boolean isEquals(String player, String[][] strings1, int i, int j) {
+    private boolean eq(String player, String[][] strings1, int i, int j) {
         return strings1[i][j].equals(player);
     }
 
