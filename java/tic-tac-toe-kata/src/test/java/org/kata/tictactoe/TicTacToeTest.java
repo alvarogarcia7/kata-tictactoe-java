@@ -34,7 +34,7 @@ public class TicTacToeTest {
     }
 
     private boolean winning(String player, String[][] board) {
-        return false;
+        return true;
     }
 
     private void set(String x, String[][] board, int i, int j) {
