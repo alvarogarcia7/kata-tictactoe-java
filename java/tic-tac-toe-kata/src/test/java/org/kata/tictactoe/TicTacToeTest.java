@@ -16,10 +16,8 @@ public class TicTacToeTest {
 
     @Test
     public void cannot_play_twice_as_the_same_player() {
-        final int i = 0;
-        final int j = 0;
-        playX(i, j);
-        this.board.play(0, 1);
+        playX(0, 0);
+        playO();
 
         assertThat(get(0, 0)).isEqualTo("X");
         assertThat(get(0, 1)).isEqualTo("O");
