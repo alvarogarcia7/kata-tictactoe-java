@@ -34,7 +34,8 @@ public class TicTacToeTest {
     }
 
     private boolean winning(String player, String[][] board) {
-        return true;
+
+        return board[0][0].equals(player) && board[1][0].equals(player) && board[2][0].equals(player);
     }
 
     private void set(String x, String[][] board, int i, int j) {
