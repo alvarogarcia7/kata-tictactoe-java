@@ -26,14 +26,6 @@ public class TicTacToeTest {
 
     }
 
-    private void playX(int i, int j) {
-        this.board.play(i, j);
-    }
-
-    private String get(int i, int j) {
-        return this.board.get(i, j);
-    }
-
     @Test
     public void win_in_first_column() {
         playX(0, 0);
@@ -122,8 +114,16 @@ public class TicTacToeTest {
         assertWinner("X");
     }
 
+    private String get(int i, int j) {
+        return this.board.get(i, j);
+    }
+
     private void assertWinner(String x) {
         assertThat(this.board.winner()).isEqualTo(x);
+    }
+
+    private void playX(int i, int j) {
+        this.board.play(i, j);
     }
 
     private void playO() {
