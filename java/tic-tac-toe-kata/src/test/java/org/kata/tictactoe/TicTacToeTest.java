@@ -103,33 +103,13 @@ public class TicTacToeTest {
         assertThat(winning("X", board)).isEqualTo(true);
     }
 
-    private boolean winning(String p, String[][] b) {
-
-        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 1) || inRow(p, b, 2) || inMainDiagonal(p, b) || inOtherDiagonal(p, b);
-    }
-
-    private boolean inMainDiagonal(String p, String[][] b) {
-        return eq(p, b, 0, 0) && eq(p, b, 1, 1) && eq(p, b, 2, 2);
-    }
-
-    private boolean inOtherDiagonal(String p, String[][] b) {
-        return eq(p, b, 2, 0) && eq(p, b, 1, 1) && eq(p, b, 0, 2);
-    }
-
-    private boolean inColumn(String p, String[][] b, int i) {
-        return eq(p, b, 0, i) && eq(p, b, 1, i) && eq(p, b, 2, i);
-    }
-
-    private boolean inRow(String p, String[][] b, int i) {
-        return eq(p, b, i, 0) && eq(p, b, i, 1) && eq(p, b, i, 2);
-    }
-
-    private boolean eq(String player, String[][] strings1, int i, int j) {
-        return strings1[i][j].equals(player);
-    }
-
     private void set(String x, String[][] board, int i, int j) {
         new TicTacToe(board).play(i, j);
+    }
+
+    private boolean winning(String p, String[][] b) {
+        return p.equals(new TicTacToe(b).isWinning());
+
     }
 
 }
