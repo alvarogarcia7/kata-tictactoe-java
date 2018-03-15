@@ -77,9 +77,20 @@ public class TicTacToeTest {
         assertThat(winning("X", board)).isEqualTo(true);
     }
 
+    @Test
+    public void win_in_third_row() {
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
+
+        set("X", board, 2, 0);
+        set("X", board, 2, 1);
+        set("X", board, 2, 2);
+
+        assertThat(winning("X", board)).isEqualTo(true);
+    }
+
     private boolean winning(String p, String[][] b) {
 
-        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 0) || inRow(p, b, 0);
+        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 1) || inRow(p, b, 2);
     }
 
     private boolean inColumn(String p, String[][] b, int i) {
