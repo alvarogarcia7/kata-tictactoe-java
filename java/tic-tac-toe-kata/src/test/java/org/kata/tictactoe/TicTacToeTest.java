@@ -90,7 +90,7 @@ public class TicTacToeTest {
 
     private boolean winning(String p, String[][] b) {
 
-        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0);
+        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 0) || inRow(p, b, 0);
     }
 
     private boolean inColumn(String p, String[][] b, int i) {
