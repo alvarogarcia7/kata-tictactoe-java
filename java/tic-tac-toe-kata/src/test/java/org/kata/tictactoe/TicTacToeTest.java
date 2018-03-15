@@ -129,7 +129,7 @@ public class TicTacToeTest {
     }
 
     private void set(String x, String[][] board, int i, int j) {
-        board[i][j] = x;
+        new TicTacToe(board).play(i, j);
     }
 
 }
