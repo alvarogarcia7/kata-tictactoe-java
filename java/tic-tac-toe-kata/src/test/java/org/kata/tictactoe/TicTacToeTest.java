@@ -101,7 +101,11 @@ public class TicTacToeTest {
 
     private boolean winning(String p, String[][] b) {
 
-        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 1) || inRow(p, b, 2);
+        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0) || inRow(p, b, 1) || inRow(p, b, 2) || inMainDiagonal(p, b);
+    }
+
+    private boolean inMainDiagonal(String p, String[][] b) {
+        return eq(p, b, 0, 0) && eq(p, b, 1, 1) && eq(p, b, 2, 2);
     }
 
     private boolean inColumn(String p, String[][] b, int i) {
