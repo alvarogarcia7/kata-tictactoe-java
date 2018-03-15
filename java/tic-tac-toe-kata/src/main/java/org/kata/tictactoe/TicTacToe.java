@@ -3,7 +3,7 @@ package org.kata.tictactoe;
 public class TicTacToe {
 
     private String[][] board;
-    boolean isX = true;
+    private boolean isX = true;
 
     public TicTacToe(String[][] board) {
         this.board = board;
