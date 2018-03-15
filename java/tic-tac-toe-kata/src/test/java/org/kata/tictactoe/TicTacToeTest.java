@@ -42,7 +42,7 @@ public class TicTacToeTest {
         playO();
         playX(2, 0);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -53,7 +53,7 @@ public class TicTacToeTest {
         playO(0, 0);
         playX(2, 1);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -64,7 +64,7 @@ public class TicTacToeTest {
         playO();
         playX(2, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -75,7 +75,7 @@ public class TicTacToeTest {
         playO(2, 2);
         playX(0, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -86,7 +86,7 @@ public class TicTacToeTest {
         playO();
         playX(1, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -97,7 +97,7 @@ public class TicTacToeTest {
         playO();
         playX(2, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -108,7 +108,7 @@ public class TicTacToeTest {
         playO();
         playX(2, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
     }
 
     @Test
@@ -119,7 +119,11 @@ public class TicTacToeTest {
         playO();
         playX(0, 2);
 
-        assertThat(winning("X", this.board)).isEqualTo(true);
+        assertWinner("X");
+    }
+
+    private void assertWinner(String x) {
+        assertThat(this.board.winner()).isEqualTo(x);
     }
 
     private boolean winning(String p, TicTacToe b) {
