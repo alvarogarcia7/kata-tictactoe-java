@@ -1,5 +1,13 @@
 # Tic Tac Toe Kata
 
+We've practiced this kata at the office, pairing.
+
+We've marked the successful sprints as "Success" and failed ones as "Failure".
+
+Some statistics:
+
+  * 6 failed ones
+  * 10 successful ones
 
 
 # Kata description - Tic Tac Toe Kata
