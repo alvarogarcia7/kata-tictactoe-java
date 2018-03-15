@@ -8,14 +8,14 @@ public class TicTacToeTest {
 
     @Test
     public void is_empty() {
-        String[][] board = new String[0][0];
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
 
         assertThat(empty(board)).isEqualTo(true);
     }
 
     @Test
     public void sets_the_position() {
-        String[][] board = new String[1][1];
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
 
         set("X", board, 0, 0);
 
