@@ -14,6 +14,6 @@ public class TicTacToeTest {
     }
 
     private boolean empty(String[][] board) {
-        return false;
+        return true;
     }
 }
