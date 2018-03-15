@@ -126,10 +126,6 @@ public class TicTacToeTest {
         assertThat(this.board.winner()).isEqualTo(x);
     }
 
-    private boolean winning(String p, TicTacToe b) {
-        return p.equals(b.winner());
-    }
-
     private void playO() {
         this.board.play(0, 1);
     }
