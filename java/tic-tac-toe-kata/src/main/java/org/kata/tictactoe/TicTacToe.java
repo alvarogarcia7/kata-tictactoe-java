@@ -2,16 +2,20 @@ package org.kata.tictactoe;
 
 public class TicTacToe {
 
+    private final String player1;
+    private final String player2;
     private String[][] board;
-    private boolean isX = true;
+    private boolean isPlayer1 = true;
 
-    public TicTacToe() {
+    public TicTacToe(String player1, String player2) {
+        this.player1 = player1;
+        this.player2 = player2;
         this.board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
     }
 
     public void play(int i, int j) {
-        this.board[i][j] = this.isX ? "X" : "O";
-        this.isX = !this.isX;
+        this.board[i][j] = this.isPlayer1 ? this.player1 : this.player2;
+        this.isPlayer1 = !this.isPlayer1;
     }
 
     public String winner() {
