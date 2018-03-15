@@ -13,7 +13,7 @@ public class TicTacToe {
         this.board[i][j] = this.isX ? "X" : "O";
     }
 
-    public String isWinning() {
+    public String winner() {
         return inColumn(0) + inColumn(1) + inColumn(2) + inRow(0) + inRow(1) + inRow(2) + inMainDiagonal() + inOtherDiagonal();
     }
 
