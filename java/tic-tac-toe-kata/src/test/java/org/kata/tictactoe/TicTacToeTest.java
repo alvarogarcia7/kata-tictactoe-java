@@ -68,11 +68,15 @@ public class TicTacToeTest {
 
     private boolean winning(String p, String[][] b) {
 
-        return inColumn(p, b, 0) || (inColumn(p, b, 1)) || (inColumn(p, b, 2));
+        return inColumn(p, b, 0) || inColumn(p, b, 1) || inColumn(p, b, 2) || inRow(p, b, 0);
     }
 
     private boolean inColumn(String p, String[][] b, int i) {
         return eq(p, b, 0, i) && eq(p, b, 1, i) && eq(p, b, 2, i);
+    }
+
+    private boolean inRow(String p, String[][] b, int i) {
+        return eq(p, b, i, 0) && eq(p, b, i, 1) && eq(p, b, i, 2);
     }
 
     private boolean eq(String player, String[][] strings1, int i, int j) {
