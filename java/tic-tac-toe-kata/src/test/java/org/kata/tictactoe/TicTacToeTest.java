@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TicTacToeTest {
-    TicTacToe board = new TicTacToe(new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } });
+    TicTacToe board = new TicTacToe();
 
     @Test
     public void starts_with_player_x() {
