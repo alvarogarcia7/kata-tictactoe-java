@@ -51,4 +51,7 @@ public class TicTacToe {
         new TicTacToe(board).play(i, j);
     }
 
+    public String get(int i, int j) {
+        return this.board[i][j];
+    }
 }

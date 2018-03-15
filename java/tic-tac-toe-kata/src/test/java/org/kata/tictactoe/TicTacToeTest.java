@@ -12,7 +12,12 @@ public class TicTacToeTest {
 
         set("X", board, 0, 0);
 
-        assertThat(board[0][0]).isEqualTo("X");
+        assertThat(get(board, 0, 0)).isEqualTo("X");
+
+    }
+
+    private String get(String[][] board, int i, int j) {
+        return new TicTacToe(board).get(i, j);
     }
 
     @Test
