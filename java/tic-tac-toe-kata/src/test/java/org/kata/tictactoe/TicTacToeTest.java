@@ -16,6 +16,18 @@ public class TicTacToeTest {
 
     }
 
+    @Test
+    public void cannot_play_twice_as_the_same_player() {
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
+
+        set("X", board, 0, 0);
+        set("X", board, 0, 1);
+
+        assertThat(get(board, 0, 0)).isEqualTo("X");
+        assertThat(get(board, 0, 1)).isEqualTo("O");
+
+    }
+
     private String get(String[][] board, int i, int j) {
         return new TicTacToe(board).get(i, j);
     }
