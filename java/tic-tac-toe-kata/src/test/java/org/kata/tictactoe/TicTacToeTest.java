@@ -7,13 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TicTacToeTest {
 
     @Test
-    public void is_empty() {
-        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
-
-        assertThat(empty(board)).isEqualTo(true);
-    }
-
-    @Test
     public void sets_the_position() {
         String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
 
@@ -139,7 +132,4 @@ public class TicTacToeTest {
         board[i][j] = x;
     }
 
-    private boolean empty(String[][] board) {
-        return true;
-    }
 }
