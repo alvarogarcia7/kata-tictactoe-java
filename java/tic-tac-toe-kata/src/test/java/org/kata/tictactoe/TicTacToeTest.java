@@ -24,7 +24,7 @@ public class TicTacToeTest {
 
     @Test
     public void win_in_first_column() {
-        String[][] board = new String[3][3];
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
 
         set("X", board, 0, 0);
         set("X", board, 1, 0);
@@ -33,9 +33,21 @@ public class TicTacToeTest {
         assertThat(winning("X", board)).isEqualTo(true);
     }
 
+    @Test
+    public void win_in_second_column() {
+        String[][] board = new String[][] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
+
+        set("X", board, 0, 1);
+        set("X", board, 1, 1);
+        set("X", board, 2, 1);
+
+        assertThat(winning("X", board)).isEqualTo(true);
+    }
+
     private boolean winning(String player, String[][] board) {
 
-        return isEquals(player, board, 0, 0) && isEquals(player, board, 1, 0) && isEquals(player, board, 2, 0);
+        return (isEquals(player, board, 0, 0) && isEquals(player, board, 1, 0) && isEquals(player, board, 2, 0)) || (isEquals(player, board, 0, 1) && isEquals(player, board, 1, 1)
+                && isEquals(player, board, 2, 1));
     }
 
     private boolean isEquals(String player, String[][] strings1, int i, int j) {
