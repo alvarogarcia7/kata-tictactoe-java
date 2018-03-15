@@ -11,6 +11,7 @@ public class TicTacToe {
 
     public void play(int i, int j) {
         this.board[i][j] = this.isX ? "X" : "O";
+        this.isX = !this.isX;
     }
 
     public String winner() {

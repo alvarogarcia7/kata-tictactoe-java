@@ -42,9 +42,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_second_column() {
         this.board.play(0, 1);
-        dummyMove();
+        dummyMove(0, 0);
         this.board.play(1, 1);
-        dummyMove();
+        dummyMove(0, 0);
         this.board.play(2, 1);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -64,9 +64,9 @@ public class TicTacToeTest {
     @Test
     public void win_in_first_row() {
         this.board.play(0, 0);
-        dummyMove();
+        dummyMove(2, 2);
         this.board.play(0, 1);
-        dummyMove();
+        dummyMove(2, 2);
         this.board.play(0, 2);
 
         assertThat(winning("X", this.board)).isEqualTo(true);
@@ -123,5 +123,9 @@ public class TicTacToeTest {
 
     private void dummyMove() {
         this.board.play(0, 1);
+    }
+
+    private void dummyMove(int i, int j) {
+        this.board.play(i, j);
     }
 }
